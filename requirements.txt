@@ -24,3 +24,5 @@ fitz
 PyMuPDF
 pygsheets
 langchain
+langchain-cli
+langchain_community
