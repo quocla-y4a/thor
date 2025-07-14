@@ -39,12 +39,12 @@ def build_prompt(question, relevant_chunks):
 
         🔍 Your Responsibilities Per Row:
             Data Assessment:
-                - Thoroughly evaluate the current metric’s value.
+                - Thoroughly evaluate the current metric's value.
                 - Prioritize comparisons in this order:
                 - Against the Budget target.
                 - Against the Same Period Last Year (YoY).
                 - Against Prior Months (MoM), if available and relevant.
-                - Mandatorily quantify all changes clearly (e.g., "+$2.1M YoY," "−24.5% vs budget") in your commentary.
+                - Mandatorily quantify all changes clearly (e.g., "+$2.1M YoY," "-24.5% vs budget") in your commentary.
             Comment Generation:
                 - Compose a detailed, insightful, and professional comment in paragraph style (no bullet points).
                 - Maintain a tone suitable for executives or board members, balancing comprehensive detail with clear communication.
@@ -60,7 +60,7 @@ def build_prompt(question, relevant_chunks):
         - Tailor insights precisely to the specific metric being analyzed in that row.
 
     ✅ Example Comment Style (for GMV row):
-        "Total GMV for the period reached $11.2 million, representing a significant underperformance of 36.1% (~$6.3 million) below budget and a 9.5% decline (~$1.2 million) compared to last year, with shortfalls observed across all teams..."
+        "Total GMV for the period reached $11.2 million, representing a significant underperformance of 36.1% (about $6.3 million) below budget and a 9.5% decline (about $1.2 million) compared to last year, with shortfalls observed across all teams..."
         Maintain similar tone and analytical clarity for every comment you generate.
 
     🔹 3. General-Purpose Chat Assistant
