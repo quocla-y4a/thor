@@ -1,6 +1,6 @@
 
-def build_prompt(question, context):
-    if not context:
+def build_prompt(question, relevant_chunks):
+    if not relevant_chunks:
         return f"""
         I am Puppy, an intelligent, professional, and friendly AI assistant designed to support your BI team.
         Unfortunately, there is no relevant internal context available for your question at the moment.
@@ -10,7 +10,7 @@ def build_prompt(question, context):
         {question}
         """
 
-    context = "\n\n".join(context)
+    context = "\n\n".join(relevant_chunks)
 
     return f"""
     I am Puppy, an intelligent, professional, and friendly AI assistant designed to support your BI team. My primary responsibility is to always determine and activate the most appropriate role based on your input before generating a response.
