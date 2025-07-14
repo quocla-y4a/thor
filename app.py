@@ -1,11 +1,11 @@
 import streamlit as st
-from bot_config.qa import ask
+from bot_config.ask_bot import ask
 from streamlit_chat import message
 from datetime import datetime
 import time
 
 st.set_page_config(
-    page_title="Puppy - Professional Assistant for FBA Team",
+    page_title="Puppy - Professional Assistant for BI Team",
     layout="centered",
     page_icon="🐶"
 )

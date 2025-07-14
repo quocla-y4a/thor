@@ -1,31 +1,23 @@
+import sys
+from bot_config.train_engine import train_all
+from bot_config.ask_bot import ask
 
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print("❗ Please provide command: 'train' or 'ask \"your question\"'")
+        sys.exit(1)
 
+    command = sys.argv[1]
 
+    if command == "train":
+        train_all()
 
+    elif command == "ask":
+        if len(sys.argv) < 3:
+            print("❗ Bạn cần nhập câu hỏi sau 'ask'. Ví dụ: python main.py ask \"What is GMV?\"")
+            sys.exit(1)
+        question = sys.argv[2]
+        print(ask(question))
 
-from vector_store.query_vector_store import query_similar_documents, query_financial_data
-from prompts.prompt_builder import build_prompt
-from openai import OpenAI
-from bot_config.config import openai_api_key
-
-client = OpenAI(api_key=openai_api_key)
-
-
-
-
-def ask(question):
-    # Lấy context từ cả PDF & Google Sheet
-    context_docs = query_similar_documents(question)
-    context_data = query_financial_data(question)
-    all_context = context_docs + context_data
-
-    prompt = build_prompt(question, all_context)
-
-    response = client.chat.completions.create(
-        model="gpt-4o-mini",
-        messages=[
-            {"role": "system", "content": "You are Meoz – a Business Intelligence Assistant."},
-            {"role": "user", "content": prompt}
-        ]
-    )
-    return response.choices[0].message.content.strip()
+    else:
+        print(f"❗ Không hiểu lệnh '{command}'. Dùng 'train' hoặc 'ask'")

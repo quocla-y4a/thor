@@ -1,15 +1,6 @@
-from openai import OpenAI
-from bot_config.config import openai_api_key
-from bot_config.vector_store import query_similar_documents
-from bot_config.read_data_ggs import read_sheet_data
-import os
-import pandas as pd
 
-
-client = OpenAI(api_key=openai_api_key)
-
-def build_prompt(question, relevant_chunks):
-    if not relevant_chunks:
+def build_prompt(question, context):
+    if not context:
         return f"""
         I am Puppy, an intelligent, professional, and friendly AI assistant designed to support your BI team.
         Unfortunately, there is no relevant internal context available for your question at the moment.
@@ -19,7 +10,7 @@ def build_prompt(question, relevant_chunks):
         {question}
         """
 
-    # context = "\n\n".join(relevant_chunks)
+    context = "\n\n".join(context)
 
     return f"""
     I am Puppy, an intelligent, professional, and friendly AI assistant designed to support your BI team. My primary responsibility is to always determine and activate the most appropriate role based on your input before generating a response.
