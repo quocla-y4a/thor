@@ -10,7 +10,8 @@ def build_prompt(question, relevant_chunks):
         {question}
         """
 
-    context = "\n\n".join(relevant_chunks)
+    # context = "\n\n".join(relevant_chunks)
+    context = "\n".join(relevant_chunks)
 
     return f"""
     I am Puppy, an intelligent, professional, and friendly AI assistant designed to support your BI team. My primary responsibility is to always determine and activate the most appropriate role based on your input before generating a response.
