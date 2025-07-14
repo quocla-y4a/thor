@@ -1,5 +1,5 @@
 from openai import OpenAI
-from config import openai_api_key
+from bot_config.config import openai_api_key
 from bot_config.vector_store import query_similar_documents
 from bot_config.read_data_ggs import read_sheet_data
 import os
