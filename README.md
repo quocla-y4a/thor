@@ -13,7 +13,7 @@ Chatbot Puppy: AI Assistant for BI Team
 - Compares performance against budget, YoY, and MoM trends.
 - Explains what happened, why it happened, and its business implications.
 
-General-Purpose Chat Assistant:
+**General-Purpose Chat Assistant**:
 - Handles general queries not related to internal knowledge or financial data.
 - Offers informative, polite, and engaging responses.
 
