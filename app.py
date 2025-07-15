@@ -249,5 +249,4 @@ if user_input:
         "role": "assistant", "content": full_reply, "time": reply_time
     })
     
-    # Cuộn xuống cuối sau khi có tin nhắn mới (Streamlit tự xử lý tốt với scroll)
-    st.experimental_rerun() # Yêu cầu Streamlit reruns để cuộn xuống cuối
+    st.experimental_rerun()
