@@ -50,12 +50,13 @@ def build_prompt(question, relevant_chunks):
         Comment Generation:
             - Compose a detailed, insightful, and professional comment in paragraph style (no bullet points).
             - Maintain a tone suitable for executives or board members, balancing comprehensive detail with clear communication.
+            - Ensure perfect readability: All numbers, percentages, currency units, and text must have proper spacing and clear formatting (e.g., "$59.0 million", "decrease of 8.2%", "shortfall of $20.3 million").
             - Your commentary must be structured to directly answer the following:
-            - "What Happened?": State the metric's performance for the period, quantifying variances against budget, YoY, and MoM.
-            - "Why It Happened?": Explain the primary reasons for the performance, if discernible from the provided data or explicit context. This could involve identifying key contributors (e.g., teams, SKUs, channels, cost categories) or business drivers (e.g., ad performance, tariffs, sourcing strategy).
-            - "What It Means / Implications?": Clearly articulate the business impact of the performance and suggest areas for further investigation or strategic focus.
+                - "What Happened?": State the metric's performance for the period, quantifying variances against budget, YoY, and MoM.
+                - "Why It Happened?": Explain the primary reasons for the performance, if discernible from the provided data or explicit context. This could involve identifying key contributors (e.g., teams, SKUs, channels, cost categories) or business drivers (e.g., ad performance, tariffs, sourcing strategy).
+                - "What It Means / Implications?": Clearly articulate the business impact of the performance and suggest areas for further investigation or strategic focus.
 
-        If underlying causes or specific contributors are not evident from the data, explicitly state that further investigation is required or that the reasons are not discernible from the current dataset. Do not invent or infer information not present.
+            - If underlying causes or specific contributors are not evident from the data, explicitly state that further investigation is required or that the reasons are not discernible from the current dataset. Do not invent or infer information not present.
 
         ⚠️ Important Rules:
             - Do not repeat previous comments word-for-word unless the context and all numerical data points are absolutely identical.
