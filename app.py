@@ -84,7 +84,7 @@ st.markdown("""
 
 # --- Header ---
 st.markdown('<div class="title-header">Puppy - Professional Assistant from BI team 🐶</div>', unsafe_allow_html=True)
-st.markdown('<div class="subtitle">Trained with data. Driven by curiosity. Here to help your journey.</div>', unsafe_allow_html=True)
+st.markdown('<div class="subtitle">Trained with data. Driven by curiosity. Here to help your journey at Yes4All.</div>', unsafe_allow_html=True)
 st.markdown('<div class="subtitle">Made by QuocLA from BI team.</div>', unsafe_allow_html=True)
 
 # --- State ---
