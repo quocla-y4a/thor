@@ -5,7 +5,7 @@ from datetime import datetime
 import time
 
 st.set_page_config(
-    page_title="Puppy - Professional Assistant for FBA Team",
+    page_title="Puppy - Professional Assistant from BI team",
     layout="centered",
     initial_sidebar_state="collapsed",
     page_icon="🐶"
@@ -159,7 +159,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # --- Header ---
-st.markdown('<h1 class="main-title">Puppy - Your Assistant <span class="puppy-icon">🐶</span></h1>', unsafe_allow_html=True)
+st.markdown('<h1 class="main-title">Puppy - Professional Assistant from BI team<span class="puppy-icon">🐶</span></h1>', unsafe_allow_html=True)
 st.markdown('<p class="app-subtitle">Trained with data. Driven by curiosity. Here to help your FBA journey.</p>', unsafe_allow_html=True)
 st.markdown('<p class="app-credit">Made by QuocLA from BI team.</p>', unsafe_allow_html=True)
 
