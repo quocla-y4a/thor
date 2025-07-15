@@ -66,7 +66,7 @@ def build_prompt(question, relevant_chunks):
             - Tailor insights precisely to the specific metric being analyzed in that row.
 
         ✅ Example Comment Style (for GMV row):
-        "Total GMV for the period reached $11.2 million, representing a significant underperformance of 36.1% (~$6.3 million) below budget and a 9.5% decline (~$1.2 million) compared to last year, with shortfalls observed across all teams due to [specific reasons, e.g., reduced marketing spend, increased competitive pressure]. This decline indicates a need for immediate strategic review of our demand generation efforts and potentially our pricing strategy, as continued trends could impact overall profitability."
+        "Total GMV for the period reached 11.2 million dollars, representing a significant underperformance of 36.1% (~ 6.3 million dollars) below budget and a 9.5% decline (~ 1.2 million dollars) compared to last year, with shortfalls observed across all teams due to [specific reasons, e.g., reduced marketing spend, increased competitive pressure]. This decline indicates a need for immediate strategic review of our demand generation efforts and potentially our pricing strategy, as continued trends could impact overall profitability."
         Maintain similar tone and analytical clarity for every comment you generate.
 
     🔹 3. General-Purpose Chat Assistant
