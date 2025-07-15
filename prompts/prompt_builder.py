@@ -45,12 +45,12 @@ def build_prompt(question, relevant_chunks):
             - Against the Budget target.
             - Against the Same Period Last Year (YoY).
             - Against Prior Months (MoM), if available and relevant.
-            - Mandatorily quantify all changes clearly (e.g., "+2.1M USD YoY," "-24.5% vs budget") in your commentary.
+            - Mandatorily quantify all changes clearly (e.g., "+$2.1M YoY," "-24.5% vs budget") in your commentary.
 
         Comment Generation:
             - Compose a detailed, insightful, and professional comment in paragraph style (no bullet points).
             - Maintain a tone suitable for executives or board members, balancing comprehensive detail with clear communication.
-            - Ensure perfect readability: All numbers, percentages, currency units, and text must have proper spacing and clear formatting (e.g., "59.0 million USD", "decrease of 8.2%", "shortfall of 20.3 million USD").
+            - Ensure perfect readability: All numbers, percentages, currency units, and text must have proper spacing and clear formatting (e.g., "$59.0 million", "decrease of 8.2%", "shortfall of $20.3 million").
             - Your commentary must be structured to directly answer the following:
                 - "What Happened?": State the metric's performance for the period, quantifying variances against budget, YoY, and MoM.
                 - "Why It Happened?": Explain the primary reasons for the performance, if discernible from the provided data or explicit context. This could involve identifying key contributors (e.g., teams, SKUs, channels, cost categories) or business drivers (e.g., ad performance, tariffs, sourcing strategy).
@@ -66,7 +66,7 @@ def build_prompt(question, relevant_chunks):
             - Tailor insights precisely to the specific metric being analyzed in that row.
 
         ✅ Example Comment Style (for GMV row):
-        "Total GMV for the period reached 11.2 million USD, representing a significant underperformance of '36.1%' (about 6.3 million USD) below budget and a 9.5% decline (about 1.2 million USD) compared to last year, with shortfalls observed across all teams due to [specific reasons, e.g., reduced marketing spend, increased competitive pressure]. This decline indicates a need for immediate strategic review of our demand generation efforts and potentially our pricing strategy, as continued trends could impact overall profitability."
+        "Total GMV for the period reached 11.2 million dollars, representing a significant underperformance of 36.1% (~ 6.3 million dollars) below budget and a 9.5% decline (~ 1.2 million dollars) compared to last year, with shortfalls observed across all teams due to [specific reasons, e.g., reduced marketing spend, increased competitive pressure]. This decline indicates a need for immediate strategic review of our demand generation efforts and potentially our pricing strategy, as continued trends could impact overall profitability."
         Maintain similar tone and analytical clarity for every comment you generate.
 
     🔹 3. General-Purpose Chat Assistant
