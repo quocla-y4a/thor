@@ -19,6 +19,8 @@ def index_dataframe(df: pd.DataFrame, source_name="google_sheet"):
 
     embeddings = HuggingFaceEmbeddings(model_name="BAAI/bge-small-en-v1.5")
     db = FAISS.from_documents(docs, embeddings)
-    db.save_local(INDEX_DIR)
 
-    print(f"✅ Indexed {len(docs)} rows from DataFrame to FAISS.")
+    index_path = f"faiss_store/{source_name}_index"
+    db.save_local(index_path)
+
+    print(f"✅ Indexed {len(docs)} rows from {source_name} into FAISS.")

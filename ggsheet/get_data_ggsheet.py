@@ -1,6 +1,7 @@
 import pygsheets
 import pandas as pd
 import os
+from pygsheets import authorize
 
 def read_sheet_data(spreadsheet_key, sheet_name, json_file):
     gc = pygsheets.authorize(service_file=json_file)
@@ -11,6 +12,19 @@ def read_sheet_data(spreadsheet_key, sheet_name, json_file):
     df = pd.DataFrame(records)
     print(f"[INFO] Have read {len(df)} records from sheet '{sheet_name}'")
     return df
+
+def read_multiple_sheets(sheet_keys, sheet_names, json_file):
+    gc = pygsheets.authorize(service_file=json_file)
+    dataframes = []
+
+    for sheet_key, sheet_name in zip(sheet_keys, sheet_names):
+        sh = gc.open_by_key(sheet_key)
+        wks = sh.worksheet_by_title(sheet_name)
+        records = wks.get_all_records(empty_value='', head=1, majdim='ROWS', numericise_data=False)
+        df = pd.DataFrame(records)
+        dataframes.append(df)
+        print(f"[INFO] Have read {len(df)} records from sheet '{sheet_name}' of file '{sheet_key}'")
+    return dataframes
 
 def update_sheet_data(spreadsheet_key, sheet_name, json_file, dataframe, clear_first=True, append=False):
     if not isinstance(dataframe, pd.DataFrame):
@@ -34,15 +48,15 @@ def update_sheet_data(spreadsheet_key, sheet_name, json_file, dataframe, clear_f
         wks.set_dataframe(dataframe, (1, 1), copy_head=True, nan='')
         print(f"[INFO] Ghi đè thành công {len(dataframe)} dòng vào sheet '{sheet_name}'")
 
-sheet_key = "1IGYFA6_78Ddp3idm1fZptWcQbI-8XNn8vgbA4gO256M"
-sheet_name = "data"
+# sheet_key = "1IGYFA6_78Ddp3idm1fZptWcQbI-8XNn8vgbA4gO256M"
+# sheet_name = "data"
 
-json_cred = os.path.join(os.path.dirname(__file__), "credentials.json")
+# json_cred = os.path.join(os.path.dirname(__file__), "credentials.json")
 
 
-df = read_sheet_data(sheet_key, sheet_name, json_cred)
+# df = read_sheet_data(sheet_key, sheet_name, json_cred)
 
-df['posting_date'] = pd.to_datetime(df['posting_date'], format='%m/%d/%Y')
+# df['posting_date'] = pd.to_datetime(df['posting_date'], format='%m/%d/%Y')
 
 
 

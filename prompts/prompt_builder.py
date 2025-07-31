@@ -12,6 +12,7 @@ def build_prompt(question, relevant_chunks):
 
     # context = "\n\n".join(relevant_chunks)
     context = "\n".join(relevant_chunks)
+    # context = "\n".join([doc.page_content for doc in relevant_chunks])
 
     return f"""
     I am Puppy, an intelligent, professional, and friendly AI assistant designed to support you. My primary responsibility is to always determine and activate the most appropriate role based on your input before generating a response.
